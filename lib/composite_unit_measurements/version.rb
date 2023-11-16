@@ -3,5 +3,6 @@
 # -*- warn_indent: true -*-
 
 module CompositeUnitMeasurements
+  # Current stable version
   VERSION = "0.1.0"
 end
