@@ -7,15 +7,18 @@ require "unit_measurements/unit_groups/length"
 module CompositeUnitMeasurements
   # A parser handling +length+ measurements, particularly for composite units
   # like +foot-inch+, +kilometre-metre+, +mile-yard+, etc.
+  #
+  # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+  # @since 0.2.0
   class Length
     class << self
-      # Parses a given string into a +UnitMeasurements::Length+ object.
+      # Parses a given +string+ into a +UnitMeasurements::Length+ object.
       #
-      # @param [String] string The +string+ to parse for length measurement.
+      # @param [String] string The string to parse for length measurement.
       # @return [UnitMeasurements::Length]
-      #   Returns a +UnitMeasurements::Length+ object if parsing is successful.
+      #   Returns a UnitMeasurements::Length object if parsing is successful.
       # @raise [UnitMeasurements::ParseError]
-      #   Raises a +ParseError+ if the string does not match any known format.
+      #   If the string does not match any known format.
       #
       # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
       # @since 0.2.0
@@ -29,13 +32,14 @@ module CompositeUnitMeasurements
       private
 
       # @private
-      # Parses a string representing a length in the format of +foot-inch+.
+      # Parses a +string+ representing a length in the format of +foot-inch+.
       #
       # @param [String] string
-      #   The string representing length in the format of +foot-inch+.
+      #   The string representing length measurement in the format of *foot-inch*.
       # @return [UnitMeasurements::Length]
-      #   Returns a +UnitMeasurements::Length+ object if parsing is successful
+      #   Returns a UnitMeasurements::Length object if parsing is successful.
       #
+      # @see FOOT_INCH
       # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
       # @since 0.2.0
       def parse_foot_inch(string)
