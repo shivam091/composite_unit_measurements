@@ -90,6 +90,59 @@
 
 <p><code>$ gem install composite_unit_measurements</code></p>
 
+<h2 id="label-Usage">Usage</h2>
+
+<p>Each packaged parser includes the <code>#parse</code> method to parse composite measurements. You can use an appropriate parser to parse measurements. The final result of <code>#parse</code> is returned in the leftmost unit of your measurement.</p>
+
+<p>This gem internally uses href="https://github.com/shivam091/unit_measurements"></a> to perform conversions and arithmetic operations. You can use any <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">alias of the units</a> to build a supported composite measurements.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>5 feet 6 inches</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 5.5 ft
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Weight.html" title="CompositeUnitMeasurements::Weight (class)">Weight</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Weight.html#parse-class_method" title="CompositeUnitMeasurements::Weight.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8 pound 12 ounce</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 8.75 lb
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Time.html" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Time.html#parse-class_method" title="CompositeUnitMeasurements::Time.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>12:60:60,60</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 13.0166666833333333666667 h
+</span></code></pre>
+
+<p>Each parser has capability to parse <code>real</code>, <code>rational</code>, <code>scientific</code>, and <code>complex</code> numbers.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1+2i ft 12 in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 2.0+2.0i ft
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.5 ft 12e2 in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 101.5 ft
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1 1/2 ft 1+2i in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 1.5833333333333333+0.16666666666666669i ft
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2 ft 1+2i in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 2.0833333333333335+0.16666666666666669i ft
+</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'><span class='object_link'><a href="CompositeUnitMeasurements/Length.html#parse-class_method" title="CompositeUnitMeasurements::Length.parse (method)">parse</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1e-2 ft 1+2i in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'>#=&gt; 0.09333333333333334+0.16666666666666669i ft
+</span></code></pre>
+
+<h2 id="label-Packaged+parsers+-26+supported+composite+measurements">Packaged parsers &amp; supported composite measurements</h2>
+
+<p>There are tons of composite measurements that are bundled with <code>composite_unit_measurements</code>.</p>
+
+<p><strong>1. Unitify::CompositeMeasurements::Length</strong> - foot-inch (5 ft 6 in)</p>
+
+<p><strong>2. Unitify::CompositeMeasurements::Weight</strong> - pound-ounce (8 lb 12 oz) - stone-pound (2 st 6 lb)</p>
+
+<p><strong>3. Unitify::CompositeMeasurements::Time</strong> - hour-minute-second-microsecond (12:60:60,60)</p>
+
+<h3 id="label-Specifing+parsers">Specifing parsers</h3>
+
+<p>By default, <code>composite_unit_measurements</code> ships with all the packaged parsers and this happens automatically when you require the gem in the following manner.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>composite_unit_measurements</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>You can also use parsers in your application as per your need as:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>composite_unit_measurements/base</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>composite_unit_measurements/length</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>composite_unit_measurements/weight</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
 <h2 id="label-Contributing">Contributing</h2>
 <ol><li>
 <p>Fork it</p>
@@ -109,7 +162,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Nov  9 11:00:38 2023 by
+  Generated on Fri Nov 17 14:14:21 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

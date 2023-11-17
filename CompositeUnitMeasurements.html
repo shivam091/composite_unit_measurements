@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/composite_unit_measurements/version.rb<span class="defines">,<br />
-  lib/composite_unit_measurements.rb</span>
+  lib/composite_unit_measurements/base.rb,<br /> lib/composite_unit_measurements/time.rb,<br /> lib/composite_unit_measurements/length.rb,<br /> lib/composite_unit_measurements/weight.rb</span>
 </dd>
   </dl>
   
@@ -102,7 +102,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="CompositeUnitMeasurements/Error.html" title="CompositeUnitMeasurements::Error (class)">Error</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span>, <span class='object_link'><a href="CompositeUnitMeasurements/Time.html" title="CompositeUnitMeasurements::Time (class)">Time</a></span>, <span class='object_link'><a href="CompositeUnitMeasurements/Weight.html" title="CompositeUnitMeasurements::Weight (class)">Weight</a></span>
     
   
 </p>
@@ -115,8 +115,131 @@
 
     <dl class="constants">
       
+        <dt id="REAL_NUMBER-constant" class="">REAL_NUMBER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches real numbers in the form of 31, +72, or -12.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (?:                   # Start of non-capturing group
+    [+-]?               # Optional plus (+) or minus (-) sign
+    \d+                 # One or more digits
+  )                     # End of non-capturing group
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="RATIONAL_NUMBER-constant" class="">RATIONAL_NUMBER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches a rational number in the form of a/b (fractional) or a b/c (mixed fractional).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (?:                   # Start of optional non-capturing group
+    [+-]?               # Optional plus (+) or minus (-) sign
+    \d+                 # One or more digits
+    \s+                 # One or more whitespace
+  )?                    # End of optional non-capturing group
+  (                     # Start of capturing group for the fraction
+    (\d+)               # Capture the numerator (one or more digits)
+    \/                  # Match the forward slash, indicating division
+    (\d+)               # Capture the denominator (one or more digits)
+  )                     # End of capturing group for the fraction
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="SCIENTIFIC_NUMBER-constant" class="">SCIENTIFIC_NUMBER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches a scientific number in various formats like 1.23E+4 or -5.67e-8.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  (?:                   # Start of non-capturing group
+    [+-]?               # Optional plus (+) or minus (-) sign
+    \d*                 # Zero or more digits (integer part)
+    \.?                 # Optional decimal point
+    \d+                 # One or more digits (fractional part)
+    (?:                 # Start of non-capturing group for exponent part
+      [Ee]              # Match &#39;E&#39; or &#39;e&#39; for exponentiation
+      [+-]?             # Optional plus (+) or minus (-) sign for exponent
+      \d+               # One or more digits (exponent value)
+    )?                  # End of non-capturing group of exponent part (optional)
+  )                     # End of non-capturing group
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="COMPLEX_NUMBER-constant" class="">COMPLEX_NUMBER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches complex numbers in the form of a+bi, where both ‘a’ and ‘b’ can be in scientific notation. It captures the real and imaginary parts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>
+  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="CompositeUnitMeasurements::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>  # Pattern for scientific number
+  </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="CompositeUnitMeasurements::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>  # Pattern for scientific number
+  i                     # Match the letter &#39;i&#39; (the imaginary unit)
+</span><span class='regexp_end'>/x</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="ANY_NUMBER-constant" class="">ANY_NUMBER =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Matches any number, including scientific, complex, rational, and real numbers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;number&gt;</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SCIENTIFIC_NUMBER-constant" title="CompositeUnitMeasurements::SCIENTIFIC_NUMBER (constant)">SCIENTIFIC_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>|</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#COMPLEX_NUMBER-constant" title="CompositeUnitMeasurements::COMPLEX_NUMBER (constant)">COMPLEX_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>|</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#RATIONAL_NUMBER-constant" title="CompositeUnitMeasurements::RATIONAL_NUMBER (constant)">RATIONAL_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>|</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#REAL_NUMBER-constant" title="CompositeUnitMeasurements::REAL_NUMBER (constant)">REAL_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
         <dt id="VERSION-constant" class="">VERSION =
-          
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Current stable version</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.1.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
       
@@ -134,7 +257,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Nov  9 11:00:38 2023 by
+  Generated on Fri Nov 17 14:14:21 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
