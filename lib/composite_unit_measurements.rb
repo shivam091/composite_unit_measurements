@@ -5,3 +5,4 @@
 require "composite_unit_measurements/base"
 
 require "composite_unit_measurements/length"
+require "composite_unit_measurements/time"
