@@ -76,14 +76,14 @@ CompositeUnitMeasurements::Length.parse("1e-2 ft 1+2i in")
 
 There are tons of composite measurements that are bundled with `composite_unit_measurements`.
 
-**1. UnitMeasurements::CompositeMeasurements::Length**
+**1. CompositeUnitMeasurements::Length**
 - foot-inch (5 ft 6 in)
 
-**2. UnitMeasurements::CompositeMeasurements::Weight**
+**2. CompositeUnitMeasurements::Weight**
 - pound-ounce (8 lb 12 oz)
 - stone-pound (2 st 6 lb)
 
-**3. UnitMeasurements::CompositeMeasurements::Time**
+**3. CompositeUnitMeasurements::Time**
 - hour-minute-second-microsecond (12:60:60,60)
 
 ### Specifing parsers
