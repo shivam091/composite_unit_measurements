@@ -2,8 +2,8 @@
 # -*- frozen_string_literal: true -*-
 # -*- warn_indent: true -*-
 
-require "composite_unit_measurements/version"
+require "composite_unit_measurements/base"
 
-module CompositeUnitMeasurements
-  class Error < StandardError; end
-end
+require "composite_unit_measurements/length"
+require "composite_unit_measurements/time"
+require "composite_unit_measurements/weight"

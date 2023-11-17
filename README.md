@@ -37,6 +37,73 @@ Or otherwise simply install it yourself as:
 
 `$ gem install composite_unit_measurements`
 
+## Usage
+
+Each packaged parser includes the `#parse` method to parse composite measurements.
+You can use an appropriate parser to parse measurements. The final result of `#parse`
+is returned in the leftmost unit of your measurement.
+
+This gem internally uses [`unit_measurements`](https://github.com/shivam091/unit_measurements)
+to perform conversions and arithmetic operations. You can use any
+[alias of the units](https://github.com/shivam091/unit_measurements/blob/main/units.md)
+to build a supported composite measurements.
+
+```ruby
+CompositeUnitMeasurements::Length.parse("5 feet 6 inches")
+#=> 5.5 ft
+CompositeUnitMeasurements::Weight.parse("8 pound 12 ounce")
+#=> 8.75 lb
+CompositeUnitMeasurements::Time.parse("12:60:60,60")
+#=> 13.0166666833333333666667 h
+```
+
+Each parser has capability to parse `real`, `rational`, `scientific`, and `complex` numbers.
+
+```ruby
+CompositeUnitMeasurements::Length.parse("1+2i ft 12 in")
+#=> 2.0+2.0i ft
+CompositeUnitMeasurements::Length.parse("1.5 ft 12e2 in")
+#=> 101.5 ft
+CompositeUnitMeasurements::Length.parse("1 1/2 ft 1+2i in")
+#=> 1.5833333333333333+0.16666666666666669i ft
+CompositeUnitMeasurements::Length.parse("2 ft 1+2i in")
+#=> 2.0833333333333335+0.16666666666666669i ft
+CompositeUnitMeasurements::Length.parse("1e-2 ft 1+2i in")
+#=> 0.09333333333333334+0.16666666666666669i ft
+```
+
+## Packaged parsers & supported composite measurements
+
+There are tons of composite measurements that are bundled with `composite_unit_measurements`.
+
+**1. Unitify::CompositeMeasurements::Length**
+- foot-inch (5 ft 6 in)
+
+**2. Unitify::CompositeMeasurements::Weight**
+- pound-ounce (8 lb 12 oz)
+- stone-pound (2 st 6 lb)
+
+**3. Unitify::CompositeMeasurements::Time**
+- hour-minute-second-microsecond (12:60:60,60)
+
+### Specifing parsers
+
+By default, `composite_unit_measurements` ships with all the packaged parsers and
+this happens automatically when you require the gem in the following manner.
+
+```ruby
+require "composite_unit_measurements"
+```
+
+You can also use parsers in your application as per your need as:
+
+```ruby
+require "composite_unit_measurements/base"
+
+require "composite_unit_measurements/length"
+require "composite_unit_measurements/weight"
+```
+
 ## Contributing
 
 1. Fork it
