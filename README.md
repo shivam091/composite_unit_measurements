@@ -1,6 +1,6 @@
 # Composite Unit Measurements
 
-A set of specialized parsers for dealing with composite measurement strings.
+A collection of specialized parsers designed for handling composite measurement strings.
 
 [![Ruby](https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml/badge.svg)](https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml)
 [![Gem Version](https://badge.fury.io/rb/composite_unit_measurements.svg)](https://badge.fury.io/rb/composite_unit_measurements)
@@ -13,17 +13,18 @@ A set of specialized parsers for dealing with composite measurement strings.
 
 ## Introduction
 
-The `CompositeUnitMeasurements` gem is a versatile solution tailored for parsing
-composite measurement strings. By harnessing the capabilities of the `unit_measurements`
-gem, it empowers you to seamlessly handle composite measurements in various units.
+The `CompositeUnitMeasurements` gem offers versatile parsers for efficiently parsing
+composite measurement strings. Leveraging the power of the `unit_measurements` gem,
+it enables smooth handling of composite measurements in various units.
 
 ## Minimum Requirements
 
-* Ruby 3.2.2+ (https://www.ruby-lang.org/en/downloads/branches/)
+* Ruby 3.2.2+ ([Download Ruby](https://www.ruby-lang.org/en/downloads/branches/))
 
 ## Installation
 
-If using bundler, first add this line to your application's Gemfile:
+To use `composite_unit_measurements-rails` in your Rails application, add the
+following line to your Gemfile:
 
 ```ruby
 gem "composite_unit_measurements"
@@ -44,20 +45,45 @@ You can use an appropriate parser to parse measurements. The final result of `#p
 is returned in the leftmost unit of your measurement.
 
 This gem internally uses [`unit_measurements`](https://github.com/shivam091/unit_measurements)
-to perform conversions and arithmetic operations. You can use any
-[alias of the units](https://github.com/shivam091/unit_measurements/blob/main/units.md)
-to build a supported composite measurements.
+to perform conversions and arithmetic operations. You can build supported composite measurements
+using any [unit alias](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+
+### Examples
+
+**Parsing length measurements:**
 
 ```ruby
-CompositeUnitMeasurements::Length.parse("5 feet 6 inches")
+CompositeUnitMeasurements::Length.parse("5 ft 6 in")
 #=> 5.5 ft
-CompositeUnitMeasurements::Weight.parse("8 pound 12 ounce")
-#=> 8.75 lb
-CompositeUnitMeasurements::Time.parse("12:60:60,60")
-#=> 13.0166666833333333666667 h
+CompositeUnitMeasurements::Length.parse("6 m 50 cm")
+#=> 6.5 m
+CompositeUnitMeasurements::Length.parse("5 km 500 m")
+#=> 5.5 km
 ```
 
-Each parser has capability to parse `real`, `rational`, `scientific`, and `complex` numbers.
+**Parsing weight measurements:**
+
+```ruby
+CompositeUnitMeasurements::Weight.parse("8 lb 12 oz")
+#=> 8.75 lb
+CompositeUnitMeasurements::Weight.parse("2 st 6 lb")
+#=> 2.428571428571429 st
+CompositeUnitMeasurements::Weight.parse("2 st 6 lb")
+# 4.5 kg
+```
+
+**Parsing time measurements:**
+
+```ruby
+CompositeUnitMeasurements::Time.parse("3 h 45 min")
+#=> 3.75 hx
+CompositeUnitMeasurements::Time.parse("12:60:3600,360000000")
+#=> 14.1 h
+```
+
+### Support for numeric types
+
+Each parser can handle various numeric types, including scientific notation, rational numbers, and complex numbers.
 
 ```ruby
 CompositeUnitMeasurements::Length.parse("1+2i ft 12 in")
@@ -74,28 +100,27 @@ CompositeUnitMeasurements::Length.parse("1e-2 ft 1+2i in")
 
 ## Packaged parsers & supported composite measurements
 
-There are tons of composite measurements that are bundled with `composite_unit_measurements`.
+The `composite_unit_measurements` gem supports parsing various composite measurements, including:
 
 **1. CompositeUnitMeasurements::Length**
 - foot-inch (5 ft 6 in)
+- metre-centimetre (6 m 50 cm)
+- kilometre-metre (5 km 500 m)
 
 **2. CompositeUnitMeasurements::Weight**
 - pound-ounce (8 lb 12 oz)
 - stone-pound (2 st 6 lb)
+- kilogramme-gramme (4 kg 500 g)
 
 **3. CompositeUnitMeasurements::Time**
-- hour-minute-second-microsecond (12:60:60,60)
+- hour-minute (3 h 45 min)
+- hour-minute-second-microsecond (12:60,3600:360000000)
 
 ### Specifing parsers
 
-By default, `composite_unit_measurements` ships with all the packaged parsers and
-this happens automatically when you require the gem in the following manner.
-
-```ruby
-require "composite_unit_measurements"
-```
-
-You can also use parsers in your application as per your need as:
+By default, `composite_unit_measurements` includes all packaged parsers automatically
+when required in your application. However, you can opt to use specific parsers as
+needed:
 
 ```ruby
 require "composite_unit_measurements/base"
@@ -106,11 +131,13 @@ require "composite_unit_measurements/weight"
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
+Contributions to this project are welcomed! To contribute:
+
+1. Fork this repository
+2. Create a new branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am "Add some feature"`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+4. Push the changes to your branch (`git push origin my-new-feature`)
+5. Create new **Pull Request**
 
 ## License
 
