@@ -88,13 +88,68 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>-*- warn_indent: true -*-</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This module serves as a namespace for classes and utilities related to composite unit measurements. To parse such measurements, refer to individual classes like <span class='object_link'><a href="CompositeUnitMeasurements/Length.html" title="CompositeUnitMeasurements::Length (class)">Length</a></span>, <span class='object_link'><a href="CompositeUnitMeasurements/Weight.html" title="CompositeUnitMeasurements::Weight (class)">Weight</a></span>, <span class='object_link'><a href="CompositeUnitMeasurements/Time.html" title="CompositeUnitMeasurements::Time (class)">Time</a></span>, etc. within this module.</p>
+</div>
+  </div>
+
+
+<p>This module provides parsers and utilities for handling composite unit measurements. It allows parsing and manipulation of various composite measurements for units of <code>length</code>, <code>weight</code>, <code>time</code> etc.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>CompositeUnitMeasurements::Length.parse(&quot;5 feet 12 inches&quot;)
+=&gt; 6.0 ft
+
+CompositeUnitMeasurements::Weight.parse(&quot;8 lb 12 oz&quot;)
+=&gt; 8.75 lb
+
+CompositeUnitMeasurements::Time.parse(&quot;3 h 45 min&quot;)
+=&gt; 3.75 h</code></pre>
+    
+  </div>
+
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
@@ -238,10 +293,26 @@
 </div>
 <div class="tags">
   
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.2.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.3.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
       
     </dl>
   
@@ -257,7 +328,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 17:16:41 2023 by
+  Generated on Mon Nov 27 14:39:16 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>

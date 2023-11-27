@@ -247,6 +247,150 @@
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:&quot;|in|inch(?:es)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
+        <dt id="METRE_ALIASES-constant" class="">METRE_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for aliases of <code>metre</code> unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:m|meter(?:s)?|metre(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="CENTIMETRE_ALIASES-constant" class="">CENTIMETRE_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for aliases of <code>centimetre</code> unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:cm|centimeter(?:s)?|centimetre(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="KILOMETRE_ALIASES-constant" class="">KILOMETRE_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for aliases of <code>kilometre</code> unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:km|kilometer(?:s)?|kilometre(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
         <dt id="FOOT_INCH-constant" class="">FOOT_INCH =
           <div class="docstring">
   <div class="discussion">
@@ -294,6 +438,102 @@
 </div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#FOOT_ALIASES-constant" title="CompositeUnitMeasurements::Length::FOOT_ALIASES (constant)">FOOT_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#INCH_ALIASES-constant" title="CompositeUnitMeasurements::Length::INCH_ALIASES (constant)">INCH_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="METRE_CENTIMETRE-constant" class="">METRE_CENTIMETRE =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for parsing a length measurement in the format of <code>metre-centimetre</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#METRE_ALIASES-constant" title="CompositeUnitMeasurements::Length::METRE_ALIASES (constant)">METRE_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#CENTIMETRE_ALIASES-constant" title="CompositeUnitMeasurements::Length::CENTIMETRE_ALIASES (constant)">CENTIMETRE_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="KILOMETRE_METRE-constant" class="">KILOMETRE_METRE =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for parsing a length measurement in the format of <code>kilometre-metre</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#KILOMETRE_ALIASES-constant" title="CompositeUnitMeasurements::Length::KILOMETRE_ALIASES (constant)">KILOMETRE_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#METRE_ALIASES-constant" title="CompositeUnitMeasurements::Length::METRE_ALIASES (constant)">METRE_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
   
@@ -355,6 +595,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Parses a <code>string</code> representing a length in the format of <code>foot-inch</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_kilometre_metre-class_method" title="parse_kilometre_metre (class method)">.<strong>parse_kilometre_metre</strong>(string)  &#x21d2; UnitMeasurements::Length </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a <code>string</code> representing a length in the format of <code>kilometre-metre</code>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_metre_centimetre-class_method" title="parse_metre_centimetre (class method)">.<strong>parse_metre_centimetre</strong>(string)  &#x21d2; UnitMeasurements::Length </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a <code>string</code> representing a length in the format of <code>metre-centimetre</code>.</p>
 </div></span>
   
 </li>
@@ -483,20 +771,24 @@
       <pre class="lines">
 
 
-25
 26
 27
 28
 29
-30</pre>
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#FOOT_INCH-constant" title="CompositeUnitMeasurements::Length::FOOT_INCH (constant)">FOOT_INCH</a></span></span> <span class='kw'>then</span> <span class='id identifier rubyid_parse_foot_inch'>parse_foot_inch</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>                <span class='id identifier rubyid_raise'>raise</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>ParseError</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#FOOT_INCH-constant" title="CompositeUnitMeasurements::Length::FOOT_INCH (constant)">FOOT_INCH</a></span></span>        <span class='kw'>then</span> <span class='id identifier rubyid_parse_foot_inch'>parse_foot_inch</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#KILOMETRE_METRE-constant" title="CompositeUnitMeasurements::Length::KILOMETRE_METRE (constant)">KILOMETRE_METRE</a></span></span>  <span class='kw'>then</span> <span class='id identifier rubyid_parse_kilometre_metre'>parse_kilometre_metre</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#METRE_CENTIMETRE-constant" title="CompositeUnitMeasurements::Length::METRE_CENTIMETRE (constant)">METRE_CENTIMETRE</a></span></span> <span class='kw'>then</span> <span class='id identifier rubyid_parse_metre_centimetre'>parse_metre_centimetre</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>                       <span class='id identifier rubyid_raise'>raise</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>ParseError</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -607,22 +899,274 @@
       <pre class="lines">
 
 
-45
-46
-47
 48
 49
 50
-51</pre>
+51
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_foot_inch'>parse_foot_inch</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_foot'>foot</span><span class='comma'>,</span> <span class='id identifier rubyid_inch'>inch</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#FOOT_INCH-constant" title="CompositeUnitMeasurements::Length::FOOT_INCH (constant)">FOOT_INCH</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_foot'>foot</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_inch'>inch</span>
-    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_foot'>foot</span><span class='comma'>,</span> <span class='symbol'>:ft</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_inch'>inch</span><span class='comma'>,</span> <span class='symbol'>:in</span><span class='rparen'>)</span>
+    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_foot'>foot</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ft</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_inch'>inch</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>in</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_kilometre_metre-class_method">
+  
+    .<strong>parse_kilometre_metre</strong>(string)  &#x21d2; <tt>UnitMeasurements::Length</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a <code>string</code> representing a length in the format of <code>kilometre-metre</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string representing length measurement in the format of <strong>kilometre-metre</strong>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>UnitMeasurements::Length</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns a UnitMeasurements::Length object if parsing is successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#KILOMETRE_METRE-constant" title="CompositeUnitMeasurements::Length::KILOMETRE_METRE (constant)">KILOMETRE_METRE</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_kilometre_metre'>parse_kilometre_metre</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_kilometre'>kilometre</span><span class='comma'>,</span> <span class='id identifier rubyid_metre'>metre</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#KILOMETRE_METRE-constant" title="CompositeUnitMeasurements::Length::KILOMETRE_METRE (constant)">KILOMETRE_METRE</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_kilometre'>kilometre</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_metre'>metre</span>
+    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_kilometre'>kilometre</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>km</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_metre'>metre</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_metre_centimetre-class_method">
+  
+    .<strong>parse_metre_centimetre</strong>(string)  &#x21d2; <tt>UnitMeasurements::Length</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a <code>string</code> representing a length in the format of <code>metre-centimetre</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string representing length measurement in the format of <strong>metre-centimetre</strong>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>UnitMeasurements::Length</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns a UnitMeasurements::Length object if parsing is successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#METRE_CENTIMETRE-constant" title="CompositeUnitMeasurements::Length::METRE_CENTIMETRE (constant)">METRE_CENTIMETRE</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.3.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/length.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_metre_centimetre'>parse_metre_centimetre</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_metre'>metre</span><span class='comma'>,</span> <span class='id identifier rubyid_centimetre'>centimetre</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#METRE_CENTIMETRE-constant" title="CompositeUnitMeasurements::Length::METRE_CENTIMETRE (constant)">METRE_CENTIMETRE</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_metre'>metre</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_centimetre'>centimetre</span>
+    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_metre'>metre</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>m</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Length</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_centimetre'>centimetre</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cm</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -635,7 +1179,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 17:16:42 2023 by
+  Generated on Mon Nov 27 14:39:16 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
