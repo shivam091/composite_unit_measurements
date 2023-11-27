@@ -17,8 +17,8 @@ RSpec.describe CompositeUnitMeasurements::Time do
       end
 
       it "parses duration" do
-        expect(subject.parse("12:60:60,60").to_s).to eq("13.0166666833333333666667 h")
-        expect(subject.parse("12:60:60").to_s).to eq("13.0166666666666667 h")
+        expect(subject.parse("12:60:3600,360000000").to_s).to eq("14.1 h")
+        expect(subject.parse("12:60:3600").to_s).to eq("14.0 h")
       end
     end
 
@@ -28,9 +28,9 @@ RSpec.describe CompositeUnitMeasurements::Time do
         expect { subject.parse("3 hourz 45 minutez") }.to raise_error(UnitMeasurements::ParseError)
         expect { subject.parse("3 hou 45 minut") }.to raise_error(UnitMeasurements::ParseError)
 
-        expect { subject.parse("10:20") }.to raise_error(UnitMeasurements::ParseError)
-        expect { subject.parse("10:20,20:30").to_s }.to raise_error(UnitMeasurements::ParseError)
-        expect { subject.parse("10:20,20,30").to_s }.to raise_error(UnitMeasurements::ParseError)
+        expect { subject.parse("12:60") }.to raise_error(UnitMeasurements::ParseError)
+        expect { subject.parse("12:60,3600:360000000").to_s }.to raise_error(UnitMeasurements::ParseError)
+        expect { subject.parse("12:60,3600,360000000").to_s }.to raise_error(UnitMeasurements::ParseError)
       end
     end
   end
