@@ -1,4 +1,14 @@
-## 0.2.0 - 2023-11-17
+## [0.3.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.2.0...v0.3.0) - 2023-11-27
+
+### What's new
+
+- Added ability to parse `kilometre-metre` and `metre-centimetre` length measurements.
+- Added ability to parse `hour-minute` time measurement.
+- Added ability to parse `kilogramme-gramme` weight measurement.
+
+-----------
+
+## [0.2.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.1.0...v0.2.0) - 2023-11-17
 
 ### What's new
 

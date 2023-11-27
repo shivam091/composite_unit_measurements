@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    composite_unit_measurements (0.2.0)
+    composite_unit_measurements (0.3.0)
       activesupport (~> 7.0)
       unit_measurements (~> 5)
 
