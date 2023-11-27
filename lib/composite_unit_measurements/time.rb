@@ -24,12 +24,32 @@ module CompositeUnitMeasurements
       # @since 0.2.0
       def parse(string)
         case string
-        when DURATION             then parse_duration(string)
-        else                           raise UnitMeasurements::ParseError, string
+        when HOUR_MINUTE then parse_hour_minute(string)
+        when DURATION    then parse_duration(string)
+        else                  raise UnitMeasurements::ParseError, string
         end
       end
 
       private
+
+      # @private
+      # Parses a +string+ representing a time in the format of +hour-minute+.
+      #
+      # @param [String] string
+      #   The string representing time measurement in the format of *hour-minute*.
+      # @return [UnitMeasurements::Time]
+      #   Returns a UnitMeasurements::Time object if parsing is successful.
+      #
+      # @see HOUR_MINUTE
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 0.3.0
+      def parse_hour_minute(string)
+        hour, minute = string.match(HOUR_MINUTE)&.captures
+
+        if hour && minute
+          UnitMeasurements::Time.new(hour, "h") + UnitMeasurements::Time.new(minute, "min")
+        end
+      end
 
       # @private
       # Parses a +string+ representing time duration in the format of
@@ -56,6 +76,24 @@ module CompositeUnitMeasurements
     end
 
     private
+
+    # Regex pattern for aliases of +hour+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.3.0
+    HOUR_ALIASES = /(?:h|hr|hour(?:s)?)/.freeze
+
+    # Regex pattern for aliases of +minute+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.3.0
+    MINUTE_ALIASES = /(?:min|minute(?:s)?)/.freeze
+
+    # Regex pattern for parsing a time measurement in the format of +hour-minute+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.3.0
+    HOUR_MINUTE = /\A#{ANY_NUMBER}\s*#{HOUR_ALIASES}\s*#{ANY_NUMBER}\s*#{MINUTE_ALIASES}\z/.freeze
 
     # Regex pattern for parsing duration in the format of +hour:minute:second+ or
     # +hour:minute:second,microsecond+.
