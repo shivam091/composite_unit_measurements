@@ -6,13 +6,20 @@ require "unit_measurements/unit_groups/weight"
 
 module CompositeUnitMeasurements
   # A parser handling +weight+ measurements, particularly for composite units
-  # like +pound-ounce+, +stone-pound+, +kilogramme-gramme+, etc.
+  # like +kilogramme-gramme+, +pound-ounce+, +stone-pound+ etc.
   #
   # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
   # @since 0.2.0
   class Weight
     class << self
       # Parses a given +string+ into a +UnitMeasurements::Weight+ object.
+      #
+      # @example Parse 'kilogramme-gramme' measurement:
+      #   CompositeUnitMeasurements::Weight.parse("4 kg 500 g") #=> 4.5 kg
+      # @example Parse 'pound-ounce' measurement:
+      #   CompositeUnitMeasurements::Weight.parse("8 lb 12 oz") #=> 8.75 lb
+      # @example Parse 'stone-pound' measurement:
+      #   CompositeUnitMeasurements::Weight.parse("2 st 6 lb") #=> 2.428571428571429 st
       #
       # @param [String] string The string to parse for weight measurement.
       # @return [UnitMeasurements::Weight]
@@ -34,7 +41,8 @@ module CompositeUnitMeasurements
       private
 
       # @private
-      # Parses a +string+ representing a weight in the format of +pound-ounce+.
+      # Parses a +string+ representing a weight in the format of +pound-ounce+
+      # into a +UnitMeasurements::Weight+ object.
       #
       # @param [String] string
       #   The string representing weight measurement in the format of *pound-ounce*.
@@ -53,7 +61,8 @@ module CompositeUnitMeasurements
       end
 
       # @private
-      # Parses a +string+ representing a weight in the format of +stone-pound+.
+      # Parses a +string+ representing a weight in the format of +stone-pound+
+      # into a +UnitMeasurements::Weight+ object.
       #
       # @param [String] string
       #   The string representing weight measurement in the format of *stone-pound*.
@@ -72,7 +81,8 @@ module CompositeUnitMeasurements
       end
 
       # @private
-      # Parses a +string+ representing a weight in the format of +kilogramme-gramme+.
+      # Parses a +string+ representing a weight in the format of +kilogramme-gramme+
+      # into a +UnitMeasurements::Weight+ object.
       #
       # @param [String] string
       #   The string representing weight measurement in the format of *kilogramme-gramme*.

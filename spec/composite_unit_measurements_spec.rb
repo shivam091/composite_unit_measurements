@@ -5,7 +5,7 @@
 # spec/composite_unit_measurements_spec.rb
 
 RSpec.describe CompositeUnitMeasurements do
-  subject(:length) { CompositeUnitMeasurements::Length }
+  let(:length) { CompositeUnitMeasurements::Length }
 
   it "parses real numbers" do
     expect(length.parse("2 ft 12 in").to_s).to eq("3.0 ft")
