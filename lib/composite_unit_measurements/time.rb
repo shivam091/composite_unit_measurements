@@ -14,6 +14,12 @@ module CompositeUnitMeasurements
     class << self
       # Parses a given +string+ into a +UnitMeasurements::Time+ object.
       #
+      # @example Parse 'hour-minute' measurement:
+      #   CompositeUnitMeasurements::Time.parse("3 h 45 min") #=> 3.75 h
+      # @example Parse 'duration':
+      #   CompositeUnitMeasurements::Time.parse("12:60:3600,360000000") #=> 14.1 h
+      #   CompositeUnitMeasurements::Time.parse("12:60:3600") #=> 14.0 h
+      #
       # @param [String] string The string to parse for time measurement.
       # @return [UnitMeasurements::Time]
       #   Returns a UnitMeasurements::Time object if parsing is successful.
@@ -33,7 +39,8 @@ module CompositeUnitMeasurements
       private
 
       # @private
-      # Parses a +string+ representing a time in the format of +hour-minute+.
+      # Parses a +string+ representing a time in the format of +hour-minute+
+      # into a +UnitMeasurements::Time+ object.
       #
       # @param [String] string
       #   The string representing time measurement in the format of *hour-minute*.
@@ -53,7 +60,8 @@ module CompositeUnitMeasurements
 
       # @private
       # Parses a +string+ representing time duration in the format of
-      # +hour:minute:second,microsecond+ or +hour:minute:second+.
+      # +hour:minute:second,microsecond+ or +hour:minute:second+ into a
+      # +UnitMeasurements::Time+ object.
       #
       # @param [String] string The string representing time duration.
       # @return [UnitMeasurements::Time]

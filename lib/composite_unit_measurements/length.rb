@@ -14,6 +14,13 @@ module CompositeUnitMeasurements
     class << self
       # Parses a given +string+ into a +UnitMeasurements::Length+ object.
       #
+      # @example Parse 'metre-centimetre' measurement:
+      #   CompositeUnitMeasurements::Length.parse("6 m 50 cm") #=> 6.5 m
+      # @example Parse 'kilometre-metre' measurement:
+      #   CompositeUnitMeasurements::Length.parse("5 km 500 m") #=> 5.5 km
+      # @example Parse 'foot-inch' measurement:
+      #   CompositeUnitMeasurements::Length.parse("5 ft 6 in") #=> 5.5 ft
+      #
       # @param [String] string The string to parse for length measurement.
       # @return [UnitMeasurements::Length]
       #   Returns a UnitMeasurements::Length object if parsing is successful.
@@ -35,7 +42,8 @@ module CompositeUnitMeasurements
       private
 
       # @private
-      # Parses a +string+ representing a length in the format of +foot-inch+.
+      # Parses a +string+ representing a length in the format of +foot-inch+
+      # into a +UnitMeasurements::Length+ object.
       #
       # @param [String] string
       #   The string representing length measurement in the format of *foot-inch*.
@@ -54,7 +62,8 @@ module CompositeUnitMeasurements
       end
 
       # @private
-      # Parses a +string+ representing a length in the format of +metre-centimetre+.
+      # Parses a +string+ representing a length in the format of +metre-centimetre+
+      # into a +UnitMeasurements::Length+ object.
       #
       # @param [String] string
       #   The string representing length measurement in the format of *metre-centimetre*.
@@ -73,7 +82,8 @@ module CompositeUnitMeasurements
       end
 
       # @private
-      # Parses a +string+ representing a length in the format of +kilometre-metre+.
+      # Parses a +string+ representing a length in the format of +kilometre-metre+
+      # into a +UnitMeasurements::Length+ object.
       #
       # @param [String] string
       #   The string representing length measurement in the format of *kilometre-metre*.
