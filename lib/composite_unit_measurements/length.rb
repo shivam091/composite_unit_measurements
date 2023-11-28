@@ -102,8 +102,6 @@ module CompositeUnitMeasurements
       end
     end
 
-    private
-
     # Regex pattern for aliases of +foot+ unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -151,5 +149,8 @@ module CompositeUnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.3.0
     KILOMETRE_METRE = /\A#{ANY_NUMBER}\s*#{KILOMETRE_ALIASES}\s*#{ANY_NUMBER}\s*#{METRE_ALIASES}\z/.freeze
+
+    private_constant :FOOT_ALIASES, :INCH_ALIASES, :METRE_ALIASES, :CENTIMETRE_ALIASES,
+                     :KILOMETRE_ALIASES, :FOOT_INCH, :KILOMETRE_METRE, :METRE_CENTIMETRE
   end
 end

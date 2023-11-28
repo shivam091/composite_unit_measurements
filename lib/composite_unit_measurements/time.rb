@@ -83,8 +83,6 @@ module CompositeUnitMeasurements
       end
     end
 
-    private
-
     # Regex pattern for aliases of +hour+ unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -109,5 +107,7 @@ module CompositeUnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.2.0
     DURATION = /\A(?<hour>#{REAL_NUMBER}):(?<min>#{REAL_NUMBER}):(?:(?<sec>#{REAL_NUMBER}))?(?:,(?<msec>#{REAL_NUMBER}))?\z/.freeze
+
+    private_constant :HOUR_ALIASES, :MINUTE_ALIASES, :HOUR_MINUTE, :DURATION
   end
 end

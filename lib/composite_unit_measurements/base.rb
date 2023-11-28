@@ -54,4 +54,7 @@ module CompositeUnitMeasurements
 
   # Matches any number, including scientific, complex, rational, and real numbers.
   ANY_NUMBER = /(?<number>#{SCIENTIFIC_NUMBER}|#{COMPLEX_NUMBER}|#{RATIONAL_NUMBER}|#{REAL_NUMBER})/.freeze
+
+  private_constant :REAL_NUMBER, :RATIONAL_NUMBER, :SCIENTIFIC_NUMBER, :COMPLEX_NUMBER,
+                   :ANY_NUMBER
 end

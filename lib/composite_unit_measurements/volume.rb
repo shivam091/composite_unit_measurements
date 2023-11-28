@@ -56,8 +56,6 @@ module CompositeUnitMeasurements
       end
     end
 
-    private
-
     # Regex pattern for aliases of +litre+ unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -75,5 +73,7 @@ module CompositeUnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.4.0
     LITRE_MILLILITRE = /\A#{ANY_NUMBER}\s*#{LITRE_ALIASES}\s*#{ANY_NUMBER}\s*#{MILLILITRE_ALIASES}\z/.freeze
+
+    private_constant :LITRE_MILLILITRE, :LITRE_ALIASES, :MILLILITRE_ALIASES
   end
 end

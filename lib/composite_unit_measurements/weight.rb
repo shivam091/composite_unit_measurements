@@ -101,8 +101,6 @@ module CompositeUnitMeasurements
       end
     end
 
-    private
-
     # Regex pattern for aliases of +pound+ unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -150,5 +148,8 @@ module CompositeUnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.3.0
     KILOGRAMME_GRAMME = /\A#{ANY_NUMBER}\s*#{KILOGRAMME_ALIASES}\s*#{ANY_NUMBER}\s*#{GRAMME_ALIASES}\z/.freeze
+
+    private_constant :KILOGRAMME_GRAMME, :POUND_ALIASES, :OUNCE_ALIASES, :STONE_ALIASES ,
+                     :GRAMME_ALIASES, :KILOGRAMME_ALIASES, :POUND_OUNCE, :STONE_POUND
   end
 end
