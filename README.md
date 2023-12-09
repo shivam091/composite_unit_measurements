@@ -106,6 +106,7 @@ including:
 - kilogramme-gramme (4 kg 500 g)
 - pound-ounce (8 lb 12 oz)
 - stone-pound (2 st 6 lb)
+- tonne-kilogramme (1 t 500 kg)
 
 **3. CompositeUnitMeasurements::Time**
 - hour-minute (3 h 45 min)
@@ -113,6 +114,8 @@ including:
 - minute-second (10 min 90 s)
 - week-day (8 wk 3 d)
 - month-day (2 mo 60 d)
+- second-millisecond (8 s 500 ms)
+- year-month (3 yr 4 mo)
 
 **4. CompositeUnitMeasurements::Volume**
 - litre-millilitre (2 l 250 ml)
