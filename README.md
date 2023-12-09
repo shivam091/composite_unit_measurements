@@ -1,6 +1,6 @@
 # Composite Unit Measurements
 
-A collection of specialized parsers designed for handling composite measurement strings.
+A collection of specialized parsers designed for handling composite measurements.
 
 [![Ruby](https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml/badge.svg)](https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml)
 [![Gem Version](https://badge.fury.io/rb/composite_unit_measurements.svg)](https://badge.fury.io/rb/composite_unit_measurements)
@@ -9,12 +9,13 @@ A collection of specialized parsers designed for handling composite measurement 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/94e13b43cdd19e6c462c/test_coverage)](https://codeclimate.com/github/shivam091/composite_unit_measurements/test_coverage)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shivam091/composite_unit_measurements/blob/main/LICENSE)
 
-**Harshal V. Ladhe, M.Sc. Computer Science.**
+**[Harshal V. Ladhe, Master of Computer Science.](https://shivam091.github.io)**
 
 ## Introduction
 
-The `composite_unit_measurements` gem offers versatile parsers for efficiently parsing
-composite measurement strings. Leveraging the power of the `unit_measurements` gem,
+The `composite_unit_measurements` gem offers versatile parsers for efficiently
+parsing composite measurements. Leveraging the power of the [`unit_measurements`]
+(https://github.com/shivam091/unit_measurements) gem,
 it enables smooth handling of composite measurements in various units.
 
 ## Minimum Requirements
@@ -41,15 +42,15 @@ Or otherwise simply install it yourself as:
 ## Usage
 
 Each packaged parser includes the `.parse` method to parse composite measurements.
-You can use an appropriate parser to these measurements and the final result of
-is returned in the leftmost unit of your measurement.
+You can use an appropriate parser to parse measurements and the final result of
+parser is returned in the leftmost unit of your measurement.
 
-The result of each parser method returns an instance of measurement on which we can
-perform any functionality offered by `unit_measurements`.
+The result of each parser method returns an instance of measurement on which we
+can perform any functionality offered by `unit_measurements`.
 
-This gem internally uses [`unit_measurements`](https://github.com/shivam091/unit_measurements)
-to perform conversions and arithmetic operations. You can build supported composite measurements
-using any [unit alias](https://github.com/shivam091/unit_measurements/blob/main/units.md).
+This gem internally uses `unit_measurements` to perform conversions and arithmetic
+operations. You can build supported composite measurements using any
+[unit alias](https://github.com/shivam091/unit_measurements/blob/main/units.md).
 
 ### Examples
 
@@ -79,7 +80,8 @@ CompositeUnitMeasurements::Volume.parse("2 l 250 ml") #=> 2.25 l
 
 ### Support for numeric types
 
-Each parser can handle various numeric types, including scientific notation, rational numbers, and complex numbers.
+Each parser can handle various numeric types, including scientific notation,
+rational numbers, and complex numbers.
 
 ```ruby
 CompositeUnitMeasurements::Length.parse("1+2i ft 12 in")    #=> 2.0+2.0i ft
@@ -91,12 +93,14 @@ CompositeUnitMeasurements::Length.parse("1e-2 ft 1+2i in")  #=> 0.09333333333333
 
 ## Packaged parsers & supported composite measurements
 
-The `composite_unit_measurements` gem supports parsing various composite measurements, including:
+The `composite_unit_measurements` gem supports parsing various composite measurements,
+including:
 
 **1. CompositeUnitMeasurements::Length**
 - metre-centimetre (6 m 50 cm)
 - kilometre-metre (5 km 500 m)
 - foot-inch (5 ft 6 in)
+- mile-yard (20 mi 220 yd)
 
 **2. CompositeUnitMeasurements::Weight**
 - kilogramme-gramme (4 kg 500 g)
@@ -106,6 +110,9 @@ The `composite_unit_measurements` gem supports parsing various composite measure
 **3. CompositeUnitMeasurements::Time**
 - hour-minute (3 h 45 min)
 - hour-minute-second-microsecond (12:60,3600:360000000)
+- minute-second (10 min 90 s)
+- week-day (8 wk 3 d)
+- month-day (2 mo 60 d)
 
 **4. CompositeUnitMeasurements::Volume**
 - litre-millilitre (2 l 250 ml)
