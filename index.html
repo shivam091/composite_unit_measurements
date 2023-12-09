@@ -60,15 +60,15 @@
       <div id="content"><div id='filecontents'>
 <h1 id="label-Composite+Unit+Measurements">Composite Unit Measurements</h1>
 
-<p>A collection of specialized parsers designed for handling composite measurement strings.</p>
+<p>A collection of specialized parsers designed for handling composite measurements.</p>
 
 <p><a href="https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml"><img src="https://github.com/shivam091/composite_unit_measurements/actions/workflows/main.yml/badge.svg"></a> <a href="https://badge.fury.io/rb/composite_unit_measurements"><img src="https://badge.fury.io/rb/composite_unit_measurements.svg"></a> <a href="http://rubygems.org/gems/composite_unit_measurements"><img src="https://img.shields.io/gem/dt/composite_unit_measurements.svg"></a> <a href="https://codeclimate.com/github/shivam091/composite_unit_measurements/maintainability"><img src="https://api.codeclimate.com/v1/badges/94e13b43cdd19e6c462c/maintainability"></a> <a href="https://codeclimate.com/github/shivam091/composite_unit_measurements/test_coverage"><img src="https://api.codeclimate.com/v1/badges/94e13b43cdd19e6c462c/test_coverage"></a> <a href="https://github.com/shivam091/composite_unit_measurements/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a></p>
 
-<p><strong>Harshal V. Ladhe, M.Sc. Computer Science.</strong></p>
+<p><strong>V. Ladhe, Master of Computer Science.[https://shivam091.github.io]</strong></p>
 
 <h2 id="label-Introduction">Introduction</h2>
 
-<p>The <code>composite_unit_measurements</code> gem offers versatile parsers for efficiently parsing composite measurement strings. Leveraging the power of the <code>unit_measurements</code> gem, it enables smooth handling of composite measurements in various units.</p>
+<p>The <code>composite_unit_measurements</code> gem offers versatile parsers for efficiently parsing composite measurements. Leveraging the power of the [<code>unit_measurements</code>] (<a href="https://github.com/shivam091/unit_measurements">github.com/shivam091/unit_measurements</a>) gem, it enables smooth handling of composite measurements in various units.</p>
 
 <h2 id="label-Minimum+Requirements">Minimum Requirements</h2>
 <ul><li>
@@ -92,11 +92,11 @@
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>Each packaged parser includes the <code>.parse</code> method to parse composite measurements. You can use an appropriate parser to these measurements and the final result of is returned in the leftmost unit of your measurement.</p>
+<p>Each packaged parser includes the <code>.parse</code> method to parse composite measurements. You can use an appropriate parser to parse measurements and the final result of parser is returned in the leftmost unit of your measurement.</p>
 
 <p>The result of each parser method returns an instance of measurement on which we can perform any functionality offered by <code>unit_measurements</code>.</p>
 
-<p>This gem internally uses href="https://github.com/shivam091/unit_measurements"></a> to perform conversions and arithmetic operations. You can build supported composite measurements using any <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit alias</a>.</p>
+<p>This gem internally uses <code>unit_measurements</code> to perform conversions and arithmetic operations. You can build supported composite measurements using any <a href="https://github.com/shivam091/unit_measurements/blob/main/units.md">unit alias</a>.</p>
 
 <h3 id="label-Examples">Examples</h3>
 
@@ -135,11 +135,11 @@
 
 <p>The <code>composite_unit_measurements</code> gem supports parsing various composite measurements, including:</p>
 
-<p><strong>1. CompositeUnitMeasurements::Length</strong> - metre-centimetre (6 m 50 cm) - kilometre-metre (5 km 500 m) - foot-inch (5 ft 6 in)</p>
+<p><strong>1. CompositeUnitMeasurements::Length</strong> - metre-centimetre (6 m 50 cm) - kilometre-metre (5 km 500 m) - foot-inch (5 ft 6 in) - mile-yard (20 mi 220 yd)</p>
 
 <p><strong>2. CompositeUnitMeasurements::Weight</strong> - kilogramme-gramme (4 kg 500 g) - pound-ounce (8 lb 12 oz) - stone-pound (2 st 6 lb)</p>
 
-<p><strong>3. CompositeUnitMeasurements::Time</strong> - hour-minute (3 h 45 min) - hour-minute-second-microsecond (12:60,3600:360000000)</p>
+<p><strong>3. CompositeUnitMeasurements::Time</strong> - hour-minute (3 h 45 min) - hour-minute-second-microsecond (12:60,3600:360000000) - minute-second (10 min 90 s) - week-day (8 wk 3 d) - month-day (2 mo 60 d)</p>
 
 <p><strong>4. CompositeUnitMeasurements::Volume</strong> - litre-millilitre (2 l 250 ml)</p>
 
@@ -174,7 +174,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Tue Nov 28 16:11:45 2023 by
+  Generated on Sat Dec  9 14:03:01 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.34 (ruby-3.2.2).
 </div>
