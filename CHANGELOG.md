@@ -1,8 +1,17 @@
-## [0.4.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.2.0...v0.3.0) - 2023-11-30
+## [0.5.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.4.0...v0.5.0) - 2023-12-10
 
 ### What's new
 
-- Added ability to parse `litre-millilitre` volume measurements.
+- Added ability to parse `mile-yard` length measurement.
+- Added ability to parse `minute-second`, `week-day`, and `month-day` time measurements.
+
+-----------
+
+## [0.4.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.3.0...v0.4.0) - 2023-12-08
+
+### What's new
+
+- Added ability to parse `litre-millilitre` volume measurement.
 - Updated readme with parsing examples.
 
 -----------

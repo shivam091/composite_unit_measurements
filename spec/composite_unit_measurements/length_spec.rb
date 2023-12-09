@@ -29,6 +29,12 @@ RSpec.describe CompositeUnitMeasurements::Length do
         expect(described_class.parse("5 kilometre 500 metre").to_s).to eq("5.5 km")
         expect(described_class.parse("5 kilometres 500 metres").to_s).to eq("5.5 km")
       end
+
+      it "parses mile and yard" do
+        expect(described_class.parse("20 mi 220 yd").to_s).to eq("20.125 mi")
+        expect(described_class.parse("20 mile 220 yard").to_s).to eq("20.125 mi")
+        expect(described_class.parse("20 miles 220 yards").to_s).to eq("20.125 mi")
+      end
     end
 
     context "when invalid string is passed" do
@@ -46,6 +52,10 @@ RSpec.describe CompositeUnitMeasurements::Length do
         expect { described_class.parse("5 kms 500 ms") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("5 kilometerss 500 meterss") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("5 kilometerz 500 meterz") }.to raise_error(UnitMeasurements::ParseError)
+
+        expect { described_class.parse("20 mis 220 yds") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("20 miless 220 yardss") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("20 milez 220 yardz") }.to raise_error(UnitMeasurements::ParseError)
       end
     end
   end
