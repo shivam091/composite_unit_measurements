@@ -37,6 +37,20 @@ RSpec.describe CompositeUnitMeasurements::Time do
         expect(described_class.parse("2 month 60 day").to_s).to eq("3.97260057797197 mo")
         expect(described_class.parse("2 months 60 days").to_s).to eq("3.97260057797197 mo")
       end
+
+      it "parses second and millisecond" do
+        expect(described_class.parse("8 s 500 ms").to_s).to eq("8.5 s")
+        expect(described_class.parse("8 sec 500 millisec").to_s).to eq("8.5 s")
+        expect(described_class.parse("8 second 500 millisecond").to_s).to eq("8.5 s")
+        expect(described_class.parse("8 seconds 500 milliseconds").to_s).to eq("8.5 s")
+      end
+
+      it "parses year and month" do
+        expect(described_class.parse("3 yr 4 mo").to_s).to eq("3.333333698630137 yr")
+        expect(described_class.parse("3 y 4 mo").to_s).to eq("3.333333698630137 yr")
+        expect(described_class.parse("3 year 4 month").to_s).to eq("3.333333698630137 yr")
+        expect(described_class.parse("3 years 4 months").to_s).to eq("3.333333698630137 yr")
+      end
     end
 
     context "when invalid string is passed" do
@@ -60,6 +74,14 @@ RSpec.describe CompositeUnitMeasurements::Time do
         expect { described_class.parse("2 mos 60 ds") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("2 monthss 60 dayss") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("2 monthz 60 dayz") }.to raise_error(UnitMeasurements::ParseError)
+
+        expect { described_class.parse("8 ss 500 mss") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("8 secondss 500 millisecondss") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("8 secondz 500 millisecondz") }.to raise_error(UnitMeasurements::ParseError)
+
+        expect { described_class.parse("3 yrs 4 mos") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("3 yearss 4 monthss") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("3 yearz 4 monthz") }.to raise_error(UnitMeasurements::ParseError)
       end
     end
   end

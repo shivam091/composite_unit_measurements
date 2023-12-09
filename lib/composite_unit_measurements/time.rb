@@ -25,6 +25,10 @@ module CompositeUnitMeasurements
       #   CompositeUnitMeasurements::Time.parse("8 wk 3 d") #=> 8.428571428571429 wk
       # @example Parse 'month-day' measurement:
       #   CompositeUnitMeasurements::Time.parse("2 mo 60 d") #=> 3.97260057797197 mo
+      # @example Parse 'second-millisecond' measurement:
+      #   CompositeUnitMeasurements::Time.parse("8 s 500 ms") #=> 8.5 s
+      # @example Parse 'year-month' measurement:
+      #   CompositeUnitMeasurements::Time.parse("3 yr 4 mo") #=> 3.333333698630137 yr
       #
       # @param [String] string The string to parse for time measurement.
       # @return [UnitMeasurements::Time]
@@ -36,12 +40,14 @@ module CompositeUnitMeasurements
       # @since 0.2.0
       def parse(string)
         case string
-        when HOUR_MINUTE   then parse_hour_minute(string)
-        when DURATION      then parse_duration(string)
-        when MINUTE_SECOND then parse_minute_second(string)
-        when WEEK_DAY      then parse_week_day(string)
-        when MONTH_DAY     then parse_month_day(string)
-        else                    raise UnitMeasurements::ParseError, string
+        when HOUR_MINUTE        then parse_hour_minute(string)
+        when DURATION           then parse_duration(string)
+        when MINUTE_SECOND      then parse_minute_second(string)
+        when WEEK_DAY           then parse_week_day(string)
+        when MONTH_DAY          then parse_month_day(string)
+        when SECOND_MILLISECOND then parse_second_millisecond(string)
+        when YEAR_MONTH         then parse_year_month(string)
+        else                         raise UnitMeasurements::ParseError, string
         end
       end
 
@@ -150,6 +156,46 @@ module CompositeUnitMeasurements
           UnitMeasurements::Time.new(month, "mo") + UnitMeasurements::Time.new(day, "d")
         end
       end
+
+      # @private
+      # Parses a +string+ representing a time in the format of +second-millisecond+
+      # into a +UnitMeasurements::Time+ object.
+      #
+      # @param [String] string
+      #   The string representing time measurement in the format of *second-millisecond*.
+      # @return [UnitMeasurements::Time]
+      #   Returns a UnitMeasurements::Time object if parsing is successful.
+      #
+      # @see SECOND_MILLISECOND
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 0.6.0
+      def parse_second_millisecond(string)
+        second, millisecond = string.match(SECOND_MILLISECOND)&.captures
+
+        if second && millisecond
+          UnitMeasurements::Time.new(second, "s") + UnitMeasurements::Time.new(millisecond, "ms")
+        end
+      end
+
+      # @private
+      # Parses a +string+ representing a time in the format of +year-month+
+      # into a +UnitMeasurements::Time+ object.
+      #
+      # @param [String] string
+      #   The string representing time measurement in the format of *year-month*.
+      # @return [UnitMeasurements::Time]
+      #   Returns a UnitMeasurements::Time object if parsing is successful.
+      #
+      # @see YEAR_MONTH
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 0.6.0
+      def parse_year_month(string)
+        year, month = string.match(YEAR_MONTH)&.captures
+
+        if year && month
+          UnitMeasurements::Time.new(year, "yr") + UnitMeasurements::Time.new(month, "mo")
+        end
+      end
     end
 
     # Regex pattern for aliases of +hour+ unit.
@@ -170,6 +216,12 @@ module CompositeUnitMeasurements
     # @since 0.5.0
     SECOND_ALIASES = /(?:s|sec|second(?:s)?)/.freeze
 
+    # Regex pattern for aliases of +millisecond+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    MILLISECOND_ALIASES = /(?:ms|millisec|millisecond(?:s)?)/.freeze
+
     # Regex pattern for aliases of +day+ unit.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -187,6 +239,12 @@ module CompositeUnitMeasurements
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.5.0
     MONTH_ALIASES = /(?:mo|month(?:s)?)/.freeze
+
+    # Regex pattern for aliases of +year+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    YEAR_ALIASES = /(?:y|yr|year(?:s)?)/.freeze
 
     # Regex pattern for parsing a time measurement in the format of +hour-minute+.
     #
@@ -217,10 +275,23 @@ module CompositeUnitMeasurements
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
     # @since 0.5.0
-    MONTH_DAY = /\A#{ANY_NUMBER}\s#{MONTH_ALIASES}\s*#{ANY_NUMBER}\s*#{DAY_ALIASES}\z/.freeze
+    MONTH_DAY = /\A#{ANY_NUMBER}\s*#{MONTH_ALIASES}\s*#{ANY_NUMBER}\s*#{DAY_ALIASES}\z/.freeze
+
+    # Regex pattern for parsing a time measurement in the format of +second-millisecond+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    SECOND_MILLISECOND = /\A#{ANY_NUMBER}\s*#{SECOND_ALIASES}\s*#{ANY_NUMBER}\s*#{MILLISECOND_ALIASES}\z/.freeze
+
+    # Regex pattern for parsing a time measurement in the format of +year-month.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    YEAR_MONTH = /\A#{ANY_NUMBER}\s*#{YEAR_ALIASES}\s*#{ANY_NUMBER}\s*#{MONTH_ALIASES}\z/.freeze
 
     private_constant :HOUR_ALIASES, :MINUTE_ALIASES, :SECOND_ALIASES, :DAY_ALIASES,
-                     :WEEK_ALIASES, :MONTH_ALIASES, :HOUR_MINUTE, :DURATION,
-                     :MINUTE_SECOND, :WEEK_DAY, :MONTH_DAY
+                     :WEEK_ALIASES, :MONTH_ALIASES, :YEAR_ALIASES, :MILLISECOND_ALIASES,
+                     :HOUR_MINUTE, :DURATION, :MINUTE_SECOND, :WEEK_DAY, :MONTH_DAY,
+                     :SECOND_MILLISECOND, :YEAR_MONTH
   end
 end
