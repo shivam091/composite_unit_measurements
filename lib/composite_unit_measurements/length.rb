@@ -20,6 +20,8 @@ module CompositeUnitMeasurements
       #   CompositeUnitMeasurements::Length.parse("5 km 500 m") #=> 5.5 km
       # @example Parse 'foot-inch' measurement:
       #   CompositeUnitMeasurements::Length.parse("5 ft 6 in") #=> 5.5 ft
+      # @example Parse 'mile-yard' measurement:
+      #   CompositeUnitMeasurements::Length.parse("20 mi 220 yd") #=> 20.125 mi
       #
       # @param [String] string The string to parse for length measurement.
       # @return [UnitMeasurements::Length]
@@ -35,6 +37,7 @@ module CompositeUnitMeasurements
         when FOOT_INCH        then parse_foot_inch(string)
         when KILOMETRE_METRE  then parse_kilometre_metre(string)
         when METRE_CENTIMETRE then parse_metre_centimetre(string)
+        when MILE_YARD        then parse_mile_yard(string)
         else                       raise UnitMeasurements::ParseError, string
         end
       end
@@ -100,6 +103,26 @@ module CompositeUnitMeasurements
           UnitMeasurements::Length.new(kilometre, "km") + UnitMeasurements::Length.new(metre, "m")
         end
       end
+
+      # @private
+      # Parses a +string+ representing a length in the format of +mile-yard+
+      # into a +UnitMeasurements::Length+ object.
+      #
+      # @param [String] string
+      #   The string representing length measurement in the format of *mile-yard*.
+      # @return [UnitMeasurements::Length]
+      #   Returns a UnitMeasurements::Length object if parsing is successful.
+      #
+      # @see MILE_YARD
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 0.5.0
+      def parse_mile_yard(string)
+        mile, yard = string.match(MILE_YARD)&.captures
+
+        if mile && yard
+          UnitMeasurements::Length.new(mile, "mi") + UnitMeasurements::Length.new(yard, "yd")
+        end
+      end
     end
 
     # Regex pattern for aliases of +foot+ unit.
@@ -132,6 +155,18 @@ module CompositeUnitMeasurements
     # @since 0.3.0
     KILOMETRE_ALIASES = /(?:km|kilometer(?:s)?|kilometre(?:s)?)/.freeze
 
+    # Regex pattern for aliases of +mile+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.5.0
+    MILE_ALIASES = /(?:mi|mile(?:s)?)/.freeze
+
+    # Regex pattern for aliases of +yard+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.5.0
+    YARD_ALIASES = /(?:yd|yard(?:s)?)/.freeze
+
     # Regex pattern for parsing a length measurement in the format of +foot-inch+.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -150,7 +185,14 @@ module CompositeUnitMeasurements
     # @since 0.3.0
     KILOMETRE_METRE = /\A#{ANY_NUMBER}\s*#{KILOMETRE_ALIASES}\s*#{ANY_NUMBER}\s*#{METRE_ALIASES}\z/.freeze
 
+    # Regex pattern for parsing a length measurement in the format of +mile-yard+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.5.0
+    MILE_YARD = /\A#{ANY_NUMBER}\s*#{MILE_ALIASES}\s*#{ANY_NUMBER}\s*#{YARD_ALIASES}\z/.freeze
+
     private_constant :FOOT_ALIASES, :INCH_ALIASES, :METRE_ALIASES, :CENTIMETRE_ALIASES,
-                     :KILOMETRE_ALIASES, :FOOT_INCH, :KILOMETRE_METRE, :METRE_CENTIMETRE
+                     :KILOMETRE_ALIASES, :MILE_ALIASES, :YARD_ALIASES, :MILE_YARD,
+                     :FOOT_INCH, :KILOMETRE_METRE, :METRE_CENTIMETRE
   end
 end
