@@ -1,3 +1,12 @@
+## [0.6.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.5.0...v0.6.0) - 2023-12-12
+
+### What's new
+
+- Added support to parse `tonne-kilogramme` weight measurements.
+- Added support to parse `second-millisecond` and `year-month` time measurements.
+
+-----------
+
 ## [0.5.0](https://github.com/shivam091/composite_unit_measurements/compare/v0.4.0...v0.5.0) - 2023-12-10
 
 ### What's new

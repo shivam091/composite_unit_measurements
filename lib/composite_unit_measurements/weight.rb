@@ -14,12 +14,14 @@ module CompositeUnitMeasurements
     class << self
       # Parses a given +string+ into a +UnitMeasurements::Weight+ object.
       #
-      # @example Parse 'kilogramme-gramme' measurement:
-      #   CompositeUnitMeasurements::Weight.parse("4 kg 500 g") #=> 4.5 kg
       # @example Parse 'pound-ounce' measurement:
       #   CompositeUnitMeasurements::Weight.parse("8 lb 12 oz") #=> 8.75 lb
       # @example Parse 'stone-pound' measurement:
       #   CompositeUnitMeasurements::Weight.parse("2 st 6 lb") #=> 2.428571428571429 st
+      # @example Parse 'kilogramme-gramme' measurement:
+      #   CompositeUnitMeasurements::Weight.parse("4 kg 500 g") #=> 4.5 kg
+      # @example Parse 'tonne-kilogramme' measurement:
+      #   CompositeUnitMeasurements::Weight.parse("1 t 500 kg") #=> 1.5 t
       #
       # @param [String] string The string to parse for weight measurement.
       # @return [UnitMeasurements::Weight]
@@ -34,6 +36,7 @@ module CompositeUnitMeasurements
         when POUND_OUNCE       then parse_pound_ounce(string)
         when STONE_POUND       then parse_stone_pound(string)
         when KILOGRAMME_GRAMME then parse_kilogramme_gramme(string)
+        when TONNE_KILOGRAMME  then parse_tonne_kilogramme(string)
         else                        raise UnitMeasurements::ParseError, string
         end
       end
@@ -99,6 +102,26 @@ module CompositeUnitMeasurements
           UnitMeasurements::Weight.new(kilogramme, "kg") + UnitMeasurements::Weight.new(gramme, "g")
         end
       end
+
+      # @private
+      # Parses a +string+ representing a weight in the format of +tonne-kilogramme+
+      # into a +UnitMeasurements::Weight+ object.
+      #
+      # @param [String] string
+      #   The string representing weight measurement in the format of *tonne-kilogramme*.
+      # @return [UnitMeasurements::Weight]
+      #   Returns a UnitMeasurements::Weight object if parsing is successful.
+      #
+      # @see TONNE_KILOGRAMME
+      # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+      # @since 0.6.0
+      def parse_tonne_kilogramme(string)
+        tonne, kilogramme = string.match(TONNE_KILOGRAMME)&.captures
+
+        if tonne && kilogramme
+          UnitMeasurements::Weight.new(tonne, "t") + UnitMeasurements::Weight.new(kilogramme, "kg")
+        end
+      end
     end
 
     # Regex pattern for aliases of +pound+ unit.
@@ -131,6 +154,12 @@ module CompositeUnitMeasurements
     # @since 0.3.0
     KILOGRAMME_ALIASES = /(?:kg|kilogram(?:s)?|kilogramme(?:s)?)/.freeze
 
+    # Regex pattern for aliases of +tonne+ or +metric tonne+ unit.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    TONNE_ALIASES = /(?:t|tonne(?:s)?|metric tonne(?:s)?)/.freeze
+
     # Regex pattern for parsing a weight measurement in the format of +pound-ounce+.
     #
     # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
@@ -149,7 +178,14 @@ module CompositeUnitMeasurements
     # @since 0.3.0
     KILOGRAMME_GRAMME = /\A#{ANY_NUMBER}\s*#{KILOGRAMME_ALIASES}\s*#{ANY_NUMBER}\s*#{GRAMME_ALIASES}\z/.freeze
 
-    private_constant :KILOGRAMME_GRAMME, :POUND_ALIASES, :OUNCE_ALIASES, :STONE_ALIASES ,
-                     :GRAMME_ALIASES, :KILOGRAMME_ALIASES, :POUND_OUNCE, :STONE_POUND
+    # Regex pattern for parsing a weight measurement in the format of +tonne-kilogramme+.
+    #
+    # @author {Harshal V. Ladhe}[https://shivam091.github.io/]
+    # @since 0.6.0
+    TONNE_KILOGRAMME  = /\A#{ANY_NUMBER}\s*#{TONNE_ALIASES}\s*#{ANY_NUMBER}\s*#{KILOGRAMME_ALIASES}\z/.freeze
+
+    private_constant :POUND_ALIASES, :OUNCE_ALIASES, :STONE_ALIASES, :GRAMME_ALIASES,
+                     :KILOGRAMME_ALIASES, :TONNE_ALIASES, :POUND_OUNCE, :STONE_POUND,
+                     :KILOGRAMME_GRAMME, :TONNE_KILOGRAMME
   end
 end

@@ -33,6 +33,14 @@ RSpec.describe CompositeUnitMeasurements::Weight do
         expect(described_class.parse("4 kilogram 500 gram").to_s).to eq("4.5 kg")
         expect(described_class.parse("4 kilograms 500 grams").to_s).to eq("4.5 kg")
       end
+
+      it "parses tonne and kilogramme" do
+        expect(described_class.parse("1 t 500 kg").to_s).to eq("1.5 t")
+        expect(described_class.parse("1 tonne 500 kilogram").to_s).to eq("1.5 t")
+        expect(described_class.parse("1 tonnes 500 kilograms").to_s).to eq("1.5 t")
+        expect(described_class.parse("1 metric tonne 500 kilogramme").to_s).to eq("1.5 t")
+        expect(described_class.parse("1 metric tonnes 500 kilogrammes").to_s).to eq("1.5 t")
+      end
     end
 
     context "when invalid string is passed" do
@@ -54,6 +62,10 @@ RSpec.describe CompositeUnitMeasurements::Weight do
         expect { described_class.parse("4 kgs 500 gs") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("4 kilogramz 500 gramz") }.to raise_error(UnitMeasurements::ParseError)
         expect { described_class.parse("4 kilograms 500 gramss") }.to raise_error(UnitMeasurements::ParseError)
+
+        expect { described_class.parse("1 ts 500 kgs") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("1 tonness 500 kilogramss") }.to raise_error(UnitMeasurements::ParseError)
+        expect { described_class.parse("1 metric tonness 500 kilogrammess") }.to raise_error(UnitMeasurements::ParseError)
       end
     end
   end
