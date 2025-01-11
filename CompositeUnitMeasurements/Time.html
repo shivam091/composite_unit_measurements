@@ -6,7 +6,7 @@
 <title>
   Class: CompositeUnitMeasurements::Time
   
-    &mdash; Documentation by YARD 0.9.34
+    &mdash; Documentation by YARD 0.9.37
   
 </title>
 
@@ -295,6 +295,54 @@
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:s|sec|second(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
+        <dt id="MILLISECOND_ALIASES-constant" class="">MILLISECOND_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for aliases of <code>millisecond</code> unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:ms|millisec|millisecond(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
         <dt id="DAY_ALIASES-constant" class="">DAY_ALIASES =
           <div class="docstring">
   <div class="discussion">
@@ -438,6 +486,54 @@
 </div>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:mo|month(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="YEAR_ALIASES-constant" class="">YEAR_ALIASES =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for aliases of <code>year</code> unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?:y|yr|year(?:s)?)</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
         <dt id="HOUR_MINUTE-constant" class="">HOUR_MINUTE =
           <div class="docstring">
@@ -677,7 +773,103 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#MONTH_ALIASES-constant" title="CompositeUnitMeasurements::Time::MONTH_ALIASES (constant)">MONTH_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#DAY_ALIASES-constant" title="CompositeUnitMeasurements::Time::DAY_ALIASES (constant)">DAY_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#MONTH_ALIASES-constant" title="CompositeUnitMeasurements::Time::MONTH_ALIASES (constant)">MONTH_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#DAY_ALIASES-constant" title="CompositeUnitMeasurements::Time::DAY_ALIASES (constant)">DAY_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="SECOND_MILLISECOND-constant" class="">SECOND_MILLISECOND =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for parsing a time measurement in the format of <code>second-millisecond</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#SECOND_ALIASES-constant" title="CompositeUnitMeasurements::Time::SECOND_ALIASES (constant)">SECOND_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#MILLISECOND_ALIASES-constant" title="CompositeUnitMeasurements::Time::MILLISECOND_ALIASES (constant)">MILLISECOND_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="YEAR_MONTH-constant" class="">YEAR_MONTH =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Regex pattern for parsing a time measurement in the format of +year-month.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#YEAR_ALIASES-constant" title="CompositeUnitMeasurements::Time::YEAR_ALIASES (constant)">YEAR_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html#ANY_NUMBER-constant" title="CompositeUnitMeasurements::ANY_NUMBER (constant)">ANY_NUMBER</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\s*</span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="#MONTH_ALIASES-constant" title="CompositeUnitMeasurements::Time::MONTH_ALIASES (constant)">MONTH_ALIASES</a></span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\z</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
       
     </dl>
   
@@ -819,6 +1011,30 @@
         <li class="private ">
   <span class="summary_signature">
     
+      <a href="#parse_second_millisecond-class_method" title="parse_second_millisecond (class method)">.<strong>parse_second_millisecond</strong>(string)  &#x21d2; UnitMeasurements::Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a <code>string</code> representing a time in the format of <code>second-millisecond</code> into a <code>UnitMeasurements::Time</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
       <a href="#parse_week_day-class_method" title="parse_week_day (class method)">.<strong>parse_week_day</strong>(string)  &#x21d2; UnitMeasurements::Time </a>
     
 
@@ -835,6 +1051,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Parses a <code>string</code> representing a time in the format of <code>week-day</code> into a <code>UnitMeasurements::Time</code> object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="private ">
+  <span class="summary_signature">
+    
+      <a href="#parse_year_month-class_method" title="parse_year_month (class method)">.<strong>parse_year_month</strong>(string)  &#x21d2; UnitMeasurements::Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title private">private</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parses a <code>string</code> representing a time in the format of <code>year-month</code> into a <code>UnitMeasurements::Time</code> object.</p>
 </div></span>
   
 </li>
@@ -869,43 +1109,57 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parse ‘hour-minute’ measurement:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3 h 45 min</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 3.75 h</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parse ‘duration’:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>12:60:3600,360000000</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 14.1 h
 </span><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>12:60:3600</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 14.0 h</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parse ‘minute-second’ measurement:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>10 min 90 s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 11.5 min</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parse ‘week-day’ measurement:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8 wk 3 d</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 8.428571428571429 wk</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Parse ‘month-day’ measurement:</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2 mo 60 d</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 3.97260057797197 mo</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Parse ‘second-millisecond’ measurement:</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8 s 500 ms</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 8.5 s</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Parse ‘year-month’ measurement:</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../CompositeUnitMeasurements.html" title="CompositeUnitMeasurements (module)">CompositeUnitMeasurements</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="CompositeUnitMeasurements::Time (class)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3 yr 4 mo</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 3.333333698630137 yr</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -1004,28 +1258,32 @@
       <pre class="lines">
 
 
-37
-38
-39
-40
 41
 42
 43
 44
 45
-46</pre>
+46
+47
+48
+49
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_string'>string</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#HOUR_MINUTE-constant" title="CompositeUnitMeasurements::Time::HOUR_MINUTE (constant)">HOUR_MINUTE</a></span></span>   <span class='kw'>then</span> <span class='id identifier rubyid_parse_hour_minute'>parse_hour_minute</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#DURATION-constant" title="CompositeUnitMeasurements::Time::DURATION (constant)">DURATION</a></span></span>      <span class='kw'>then</span> <span class='id identifier rubyid_parse_duration'>parse_duration</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#MINUTE_SECOND-constant" title="CompositeUnitMeasurements::Time::MINUTE_SECOND (constant)">MINUTE_SECOND</a></span></span> <span class='kw'>then</span> <span class='id identifier rubyid_parse_minute_second'>parse_minute_second</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#WEEK_DAY-constant" title="CompositeUnitMeasurements::Time::WEEK_DAY (constant)">WEEK_DAY</a></span></span>      <span class='kw'>then</span> <span class='id identifier rubyid_parse_week_day'>parse_week_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#MONTH_DAY-constant" title="CompositeUnitMeasurements::Time::MONTH_DAY (constant)">MONTH_DAY</a></span></span>     <span class='kw'>then</span> <span class='id identifier rubyid_parse_month_day'>parse_month_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>                    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>ParseError</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#HOUR_MINUTE-constant" title="CompositeUnitMeasurements::Time::HOUR_MINUTE (constant)">HOUR_MINUTE</a></span></span>        <span class='kw'>then</span> <span class='id identifier rubyid_parse_hour_minute'>parse_hour_minute</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#DURATION-constant" title="CompositeUnitMeasurements::Time::DURATION (constant)">DURATION</a></span></span>           <span class='kw'>then</span> <span class='id identifier rubyid_parse_duration'>parse_duration</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#MINUTE_SECOND-constant" title="CompositeUnitMeasurements::Time::MINUTE_SECOND (constant)">MINUTE_SECOND</a></span></span>      <span class='kw'>then</span> <span class='id identifier rubyid_parse_minute_second'>parse_minute_second</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#WEEK_DAY-constant" title="CompositeUnitMeasurements::Time::WEEK_DAY (constant)">WEEK_DAY</a></span></span>           <span class='kw'>then</span> <span class='id identifier rubyid_parse_week_day'>parse_week_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#MONTH_DAY-constant" title="CompositeUnitMeasurements::Time::MONTH_DAY (constant)">MONTH_DAY</a></span></span>          <span class='kw'>then</span> <span class='id identifier rubyid_parse_month_day'>parse_month_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#SECOND_MILLISECOND-constant" title="CompositeUnitMeasurements::Time::SECOND_MILLISECOND (constant)">SECOND_MILLISECOND</a></span></span> <span class='kw'>then</span> <span class='id identifier rubyid_parse_second_millisecond'>parse_second_millisecond</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="#YEAR_MONTH-constant" title="CompositeUnitMeasurements::Time::YEAR_MONTH (constant)">YEAR_MONTH</a></span></span>         <span class='kw'>then</span> <span class='id identifier rubyid_parse_year_month'>parse_year_month</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>                         <span class='id identifier rubyid_raise'>raise</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>ParseError</span><span class='comma'>,</span> <span class='id identifier rubyid_string'>string</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1154,18 +1412,18 @@
       <pre class="lines">
 
 
-84
-85
-86
-87
-88
-89
 90
 91
-92</pre>
+92
+93
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_duration'>parse_duration</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hour'>hour</span><span class='comma'>,</span> <span class='id identifier rubyid_minute'>minute</span><span class='comma'>,</span> <span class='id identifier rubyid_second'>second</span><span class='comma'>,</span> <span class='id identifier rubyid_microsecond'>microsecond</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#DURATION-constant" title="CompositeUnitMeasurements::Time::DURATION (constant)">DURATION</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
@@ -1284,16 +1542,16 @@
       <pre class="lines">
 
 
-62
-63
-64
-65
-66
-67
-68</pre>
+68
+69
+70
+71
+72
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_hour_minute'>parse_hour_minute</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hour'>hour</span><span class='comma'>,</span> <span class='id identifier rubyid_minute'>minute</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#HOUR_MINUTE-constant" title="CompositeUnitMeasurements::Time::HOUR_MINUTE (constant)">HOUR_MINUTE</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
@@ -1410,16 +1668,16 @@
       <pre class="lines">
 
 
-106
-107
-108
-109
-110
-111
-112</pre>
+112
+113
+114
+115
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_minute_second'>parse_minute_second</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_minute'>minute</span><span class='comma'>,</span> <span class='id identifier rubyid_second'>second</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#MINUTE_SECOND-constant" title="CompositeUnitMeasurements::Time::MINUTE_SECOND (constant)">MINUTE_SECOND</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
@@ -1536,22 +1794,148 @@
       <pre class="lines">
 
 
-146
-147
-148
-149
-150
-151
-152</pre>
+152
+153
+154
+155
+156
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_month_day'>parse_month_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='id identifier rubyid_day'>day</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#MONTH_DAY-constant" title="CompositeUnitMeasurements::Time::MONTH_DAY (constant)">MONTH_DAY</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_day'>day</span>
     <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>mo</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_day'>day</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_second_millisecond-class_method">
+  
+    .<strong>parse_second_millisecond</strong>(string)  &#x21d2; <tt>UnitMeasurements::Time</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a <code>string</code> representing a time in the format of <code>second-millisecond</code> into a <code>UnitMeasurements::Time</code> object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string representing time measurement in the format of <strong>second-millisecond</strong>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>UnitMeasurements::Time</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns a UnitMeasurements::Time object if parsing is successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#SECOND_MILLISECOND-constant" title="CompositeUnitMeasurements::Time::SECOND_MILLISECOND (constant)">SECOND_MILLISECOND</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+172
+173
+174
+175
+176
+177
+178</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 172</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_second_millisecond'>parse_second_millisecond</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_second'>second</span><span class='comma'>,</span> <span class='id identifier rubyid_millisecond'>millisecond</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#SECOND_MILLISECOND-constant" title="CompositeUnitMeasurements::Time::SECOND_MILLISECOND (constant)">SECOND_MILLISECOND</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_second'>second</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_millisecond'>millisecond</span>
+    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_second'>second</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>s</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_millisecond'>millisecond</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ms</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1662,16 +2046,16 @@
       <pre class="lines">
 
 
-126
-127
-128
-129
-130
-131
-132</pre>
+132
+133
+134
+135
+136
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 126</span>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse_week_day'>parse_week_day</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_week'>week</span><span class='comma'>,</span> <span class='id identifier rubyid_day'>day</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#WEEK_DAY-constant" title="CompositeUnitMeasurements::Time::WEEK_DAY (constant)">WEEK_DAY</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
@@ -1685,14 +2069,140 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="parse_year_month-class_method">
+  
+    .<strong>parse_year_month</strong>(string)  &#x21d2; <tt>UnitMeasurements::Time</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parses a <code>string</code> representing a time in the format of <code>year-month</code> into a <code>UnitMeasurements::Time</code> object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string representing time measurement in the format of <strong>year-month</strong>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>UnitMeasurements::Time</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns a UnitMeasurements::Time object if parsing is successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#YEAR_MONTH-constant" title="CompositeUnitMeasurements::Time::YEAR_MONTH (constant)">YEAR_MONTH</a></span></li>
+    
+  </ul>
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><a href="https://shivam091.github.io/">Harshal V. Ladhe</a></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Since:</p>
+<ul class="since">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>0.6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/composite_unit_measurements/time.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_parse_year_month'>parse_year_month</span><span class='lparen'>(</span><span class='id identifier rubyid_string'>string</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#YEAR_MONTH-constant" title="CompositeUnitMeasurements::Time::YEAR_MONTH (constant)">YEAR_MONTH</a></span></span><span class='rparen'>)</span><span class='op'>&amp;.</span><span class='id identifier rubyid_captures'>captures</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_month'>month</span>
+    <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>yr</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='const'>UnitMeasurements</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>mo</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sat Dec  9 14:03:01 2023 by
+  Generated on Sat Jan 11 13:13:09 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.34 (ruby-3.2.2).
+  0.9.37 (ruby-3.2.2).
 </div>
 
     </div>
